@@ -42,13 +42,13 @@
             bindings = <&kp>, <&kp>;
             display-name = "Mod-Tap";
         };
-        mtf: mod_tap {
+        mtf: mod_tap_fast {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <140>;
             bindings = <&kp>, <&kp>;
-            display-name = "Mod-Tap";
+            display-name = "Mod-Tap-Fast";
         };
         lt: layer_tap {
             compatible = "zmk,behavior-hold-tap";
