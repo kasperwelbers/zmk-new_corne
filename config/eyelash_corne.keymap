@@ -46,6 +46,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
+            retro-tap;
             tapping-term-ms = <140>;
             bindings = <&kp>, <&kp>;
             display-name = "Mod-Tap-Fast";
@@ -80,10 +81,10 @@
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB    &kp Q       &kp W  &kp E     &kp R              &kp T                               &mmv MOVE_UP                   &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp ESC    &kp A       &kp S  &kp D     &kp F              &kp G               &mmv MOVE_LEFT  &mkp LCLK      &mmv MOVE_RIGHT &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHIFT &mt LGUI Z  &kp X  &kp C     &kp V              &kp B     &kp SPACE                 &mmv MOVE_DOWN                 &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
-                              &kp LALT  &mtf LSHIFT SPACE  &mtf LCTRL TAB                                                     &lt 2 ENTER  &mo 1  &mo 3
+&kp TAB    &kp Q       &kp W  &kp E     &kp R              &kp T                               &mmv MOVE_UP                   &kp Y        &kp U  &kp I      &kp O    &kp P         &kp BSPC
+&kp ESC    &kp A       &kp S  &kp D     &kp F              &kp G               &mmv MOVE_LEFT  &mkp LCLK      &mmv MOVE_RIGHT &kp H        &kp J  &kp K      &kp L    &kp SEMI      &kp SQT
+&kp LSHIFT &mt LGUI Z  &kp X  &kp C     &kp V              &kp B     &kp SPACE                 &mmv MOVE_DOWN                 &kp N        &kp M  &kp COMMA  &kp DOT  &mt LGUI FSLH &kp RSHIFT
+                              &kp LALT  &mtf LSHIFT SPACE  &kp LCTRL                                                          &lt 2 ENTER  &mo 1  &kp RALT
 
             >;
 
@@ -95,9 +96,9 @@
         lower_layer {
             display-name = "NUMSYM";
             bindings = <
-&kp EXCL &kp AT           &kp HASH        &kp DLLR      &kp PRCNT     &kp CARET                           &mmv MOVE_UP                 &kp AMPS         &kp ASTRK        &kp LPAR         &kp RPAR    &kp UNDER  &kp PLUS
-&kp N1   &kp N2           &kp N3          &kp N4        &kp N5        &kp N6               &mmv MOVE_LEFT &kp LCLK     &kp MOVE_RIGHT  &kp N7           &kp N8           &kp N9           &kp N0      &kp MINUS  &kp EQUAL
-&trans   &kp GRAVE        &kp LBKT        &kp RBKT      &kp TILDE     &trans    &kp SPACE                 &mmv MOVE_DOWN               &trans           &kp PIPE         &kp LBRC         &kp RBRC    &kp BSLH   &trans
+&kp EXCL  &kp AT           &kp HASH        &kp DLLR      &kp PRCNT     &kp CARET                           &mmv MOVE_UP                 &kp AMPS         &kp ASTRK        &kp LPAR         &kp RPAR    &kp UNDER  &kp PLUS
+&kp N1    &kp N2           &kp N3          &kp N4        &kp N5        &kp N6               &mmv MOVE_LEFT &kp LCLK     &kp MOVE_RIGHT  &kp N7           &kp N8           &kp N9           &kp N0      &kp MINUS  &kp EQUAL
+&kp TILDE &kp GRAVE        &kp LBKT        &kp RBKT      &kp TILDE     &trans    &kp SPACE                 &mmv MOVE_DOWN               &trans           &kp PIPE         &kp LBRC         &kp RBRC    &kp BSLH   &kp PIPE
                                           &trans        &trans        &trans                                                           &trans           &trans           &trans
 
             >;
