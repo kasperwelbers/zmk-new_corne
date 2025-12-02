@@ -55,9 +55,18 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-	    tapping-term-ms = <160>; 
+	        tapping-term-ms = <160>; 
             bindings = <&mo>, <&kp>;
             display-name = "Layer-Tap";
+        };
+        ltf: layer_tap_fast {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            retro-tap;
+	        tapping-term-ms = <140>; 
+            bindings = <&mo>, <&kp>;
+            display-name = "Layer-Tap-Fast";
         };
     };
 
@@ -82,7 +91,7 @@
             display-name = "QWERTY";
             bindings = <
 &kp TAB    &kp Q       &kp W  &kp E     &kp R              &kp T                               &mmv MOVE_UP                   &kp Y        &kp U  &kp I      &kp O    &kp P         &kp BSPC
-&kp ESC    &kp A       &kp S  &kp D     &kp F              &kp G               &mmv MOVE_LEFT  &mkp LCLK      &mmv MOVE_RIGHT &kp H        &kp J  &kp K      &kp L    &kp SEMI      &kp SQT
+&kp ESC    &kp A       &kp S  &kp D     &ltf 3 F           &kp G               &mmv MOVE_LEFT  &mkp LCLK      &mmv MOVE_RIGHT &kp H        &kp J  &kp K      &kp L    &kp SEMI      &kp SQT
 &kp LSHIFT &mt LGUI Z  &kp X  &kp C     &kp V              &kp B     &kp SPACE                 &mmv MOVE_DOWN                 &kp N        &kp M  &kp COMMA  &kp DOT  &mt LGUI FSLH &kp RSHIFT
                               &kp LALT  &mtf LSHIFT SPACE  &kp LCTRL                                                          &lt 2 ENTER  &mo 1  &kp RALT
 
@@ -109,9 +118,9 @@
         raise_layer {
             display-name = "NAVIGATE";
             bindings = <
-&kp F1  &kp F2        &kp F3        &kp F4    &kp F5    &kp F6                            &mmv MOVE_UP                     &kp F7   &kp F8    &kp F9    &kp F10   &kp F11 &kp 12
-&trans  &trans        &trans        &trans    &trans    &trans            &mmv MOVE_LEFT  &mkp RCLK      &mmv MOVE_RIGHT   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans  &kp DEL
-&trans  &trans        &trans        &trans    &trans    &trans  &kp SPACE                 &mmv MOVE_DOWN                   &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans  &trans
+&kp F1  &kp F2        &kp F3        &kp F4    &kp F5    &kp F6                          &bt BT_SEL 1                   &kp F7   &kp F8    &kp F9    &kp F10   &kp F11 &kp 12
+&trans  &trans        &trans        &trans    &trans    &trans            &bt BT_SEL 0  &out OUT_TOG    &bt BT_SEL 2   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans  &kp DEL
+&trans  &trans        &trans        &trans    &trans    &trans  &kp SPACE               &bt BT_SEL 3                   &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans  &trans
                                     &trans    &trans    &trans                                                             &trans   &trans     &trans
 
             >;
@@ -122,10 +131,10 @@
         layer_3 {
             display-name = "MENU";
             bindings = <
-&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &out OUT_TOG                            &mmv MOVE_UP                       &trans      &trans  &trans &trans &trans &trans
-&trans       &trans       &trans       &trans       &trans       &trans                  &mmv MOVE_LEFT  &bt BT_CLR_ALL  &mmv MOVE_RIGHT    &trans      &trans  &trans &trans &trans &trans
-&trans       &trans       &trans       &trans       &trans       &trans        &kp SPACE                 &mmv MOVE_DOWN                     &trans      &trans  &trans &trans &trans &trans
-                                       &trans       &trans       &trans                                                                     &bt BT_CLR  &trans  &trans
+&trans       &trans       &trans       &trans       &trans       &trans                                  &mmv MOVE_UP                       &trans      &N7     &N8    &N9    &trans &trans
+&trans       &trans       &trans       &trans       &trans       &trans                  &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT    &trans      &N4     &N5    &N6    &trans &trans
+&trans       &trans       &trans       &trans       &trans       &trans        &kp SPACE                 &mmv MOVE_DOWN                     &trans      &N1     &N2    &N3    &trans &trans
+                                       &trans       &trans       &trans                                                                     &trans      &N0     &trans
 
             >;
 
